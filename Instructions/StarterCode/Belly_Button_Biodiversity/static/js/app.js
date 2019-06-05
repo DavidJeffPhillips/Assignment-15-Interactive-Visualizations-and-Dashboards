@@ -9,7 +9,7 @@ d3.select('#sample-metadata')
     // Use `.html("") to clear any existing metadata
   .html("").then(function(data) {
     console.log(data);
-    for (let [key, value] of Object.entries(sample)) {
+    for (let [key, value] of Object.entries(sample_metadata)) {
       console.log(`${key}: ${value}`);
       d3.append([key, value])
     };
@@ -23,7 +23,7 @@ d3.select('#sample-metadata')
 };
 
 function buildCharts(sample) {
-var markers = "markers"
+
   // @TODO: Use `d3.json` to fetch the sample data for the plots
 var sampleData = d3.json('samples/<sample>');
     // @TODO: Build a Bubble Chart using the sample data
