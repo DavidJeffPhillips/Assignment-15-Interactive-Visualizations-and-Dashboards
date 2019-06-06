@@ -38,7 +38,7 @@ function buildCharts(sample) {
     };
     var bubbleData = [bubbleTrace];
     var bubbleLayout = {
-      title: 'Bubble Title',
+      title: `Sample: ${selected}`,
       showlegend: false,
       height: 500,
       width: 1000
@@ -47,13 +47,14 @@ function buildCharts(sample) {
 
     // @TODO: Build a Pie Chart
     var pieData = [{
-      values: sampleData.sample_values.slice(1,10),
-      labels: sampleData.otu_ids.slice(1,10),
+      values: sampleData.sample_values.slice(0,10),
+      labels: sampleData.otu_ids.slice(0,10),
       type: 'pie'
     }];
     var pieLayout = {
-      height: 500,
-      width: 500
+      title: `Sample: ${selected}`,
+      height: 400,
+      width: 400
     };
   Plotly.newPlot('pie', pieData, pieLayout);
     // HINT: You will need to use slice() to grab the top 10 sample_values,
